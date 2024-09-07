@@ -333,15 +333,17 @@ const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0
                             <div className="product-title">{plant.name}</div>
                             
                             <div className="product-cost">{plant.cost}</div>
+                            <div className="product-description">{plant.description}</div>
                             
                             {/*Similarly like the above plant.name show other details like description and cost*/}
-                            <button
-                                className={addedToCart[category.name] ? 'added-to-cart' : ''}
-                                onClick={() => handleAddToCart(category)}
-                                >
-                                Add to Cart
+                            <button 
+                                className="product-button" 
+                                onClick={() => handleAddToCart(plant)}
+                                disabled={addedToCart[plant.name]}>
+                                {addedToCart[plant.name] ? 'Added to Cart' : 'Add to Cart'}
+                                <span className="tooltip">Product already in the cart. Click on the cart in the top right to increase the quantity</span>
                             </button>
-                            <div className="product-description">{plant.description}</div>
+                            
                         </div>
                         ))}
                     </div>

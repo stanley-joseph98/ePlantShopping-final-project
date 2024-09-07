@@ -229,6 +229,38 @@ body {
     margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
+    overflow: visible;
+  }
+  .product-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: grey;
+    position: relative; /* add this */
+  }
+  
+  .product-button:disabled:hover {
+    background-color: grey;
+  }
+  
+  .tooltip {
+    display: none;
+    background-color: rgb(10, 245, 37);
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 80%; /* adjust the position as needed */
+    left: 50%;
+    margin-left: -100px;
+    bottom: -35px;
+    
+  }
+  
+  .product-button:disabled:hover .tooltip {
+    display: block;
   }
   
   .cartIcon{
